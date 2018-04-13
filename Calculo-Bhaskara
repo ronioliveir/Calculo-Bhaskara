@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main()
+{
+    float a,b,c,delta,raiz1,raiz2,raiz_delta,raiz_unica;
+
+    printf("Digite o Valor de A:");
+        scanf("%f", &a);
+     printf("Digite o Valor de B:");
+        scanf("%f", &b);
+      printf("Digite o Valor de C:");
+        scanf("%f", &c);
+        if( a == 0 || b ==0 || c == 0)
+        {
+            printf("\nNao e uma equacao !!!\n");
+        }
+        else
+        {
+        delta = (pow(b, 2) - 4*a*c);
+        raiz_delta=sqrt(delta);
+
+        printf("\nDelta = %.2f\n", delta);
+        if( delta < 0 )
+        {
+            printf("\nNao exite raizes reais, pois Delta menor que **Zero**\n");
+        }
+        else if ( delta == 0 )
+        {
+            raiz1=  -b/2*a;
+            raiz2=  -b/2*a;
+            printf("\nRaizes Sao Iguais\nRaiz x1: %.2f\nRaiz x2: %.2f\n",raiz1,raiz2);
+        }
+        else
+        {
+            raiz1= (-b+(raiz_delta))/2*a;
+            raiz2= (-b-(raiz_delta))/2*a;
+
+             printf("\nRaiz 1: %.2f\n", raiz1);
+             printf("\nRaiz 2: %.2f\n", raiz2);
+        }
+        }
+        return 0;
+}
